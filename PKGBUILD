@@ -10,7 +10,7 @@ pkgrel=1
 epoch=
 pkgdesc="custom latex package for labreports"
 arch=('any')
-url="file:///home/noah/src/com/$pkgname/"
+url="https://github.com/theNerd247/texlive-custom"
 license=('GPL')
 groups=()
 depends=(texlive-core)
@@ -24,14 +24,14 @@ backup=()
 options=()
 install=
 changelog=
-source=("$url/$pkgname-$pkgver.tar.gz")
+source=("$url/archive/v0.0.1.tar.gz")
 noextract=()
-md5sums=('964fccf17d9bfc2f3f704c7bd7a8187c')
+md5sums=('777c760bef67a06552023660aa6e867c')
 validpgpkeys=()
 
-INSTALL_DIR="/usr/share/texmf/tex/latex/labreport"
 
 package() {
+	INSTALL_DIR="$pkgdir/usr/share/texmf/tex/latex/custom"
 	cd "$pkgname-$pkgver"
 	mkdir -p "$INSTALL_DIR"
 	cp labreport.sty "$INSTALL_DIR"
