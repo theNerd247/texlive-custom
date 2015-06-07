@@ -44,7 +44,7 @@ build()
     git clone "$_gitroot" "$_gitname"
   fi
 
-	git checkout $pkgver
+	git checkout "v$pkgver"
 
   msg "GIT checkout done or server timeout"
 }
