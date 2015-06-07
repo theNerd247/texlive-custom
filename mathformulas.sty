@@ -1,0 +1,19 @@
+\ProvidesPackage{mathformulas}
+
+%laplace transform formula
+\newcommand{\laplace}[1]{\int_0^{\infty} \mathrm{e}^{-st}\cdot #1\, dt}
+
+%short laplace transform operator (L{f..})
+\newcommand{\Lap}[1]{\mathcal{L}\left\{#1\right\}}
+
+%same as \Lap but for inverse laplace transform
+\newcommand{\Lapinv}[1]{\mathcal{L}^{-1}\left\{#1\right\}}
+
+%evaluation interval
+\newcommand{\inteval}[3]{\left.#1\right|_#2^{#3}}
+
+%the exponential letter
+\newcommand{\e}{\mathrm{e}}
+
+%exponential function
+\newcommand{\exp}[1]{\e^{\1}}
