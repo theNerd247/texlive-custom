@@ -24,15 +24,32 @@ backup=()
 options=()
 install=
 changelog=
-source=("$url/archive/v0.0.1.tar.gz")
+source=()
 noextract=()
 md5sums=('777c760bef67a06552023660aa6e867c')
 validpgpkeys=()
 
+_gitroot="$url.git"
+_gitname=$pkgname
+
+build() 
+{
+  cd "$srcdir"
+  msg "Connecting to GIT server...."
+
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
+    msg "The local files are updated."
+  else
+    git clone "$_gitroot" "$_gitname"
+  fi
+
+  msg "GIT checkout done or server timeout"
+}
 
 package() {
 	INSTALL_DIR="$pkgdir/usr/share/texmf/tex/latex/custom"
-	cd "$pkgname-$pkgver"
+	cd "$srcdir/$_gitname"
 	mkdir -p "$INSTALL_DIR"
-	cp labreport.sty "$INSTALL_DIR"
+	cp -r pkgs/* "$INSTALL_DIR"
 }
