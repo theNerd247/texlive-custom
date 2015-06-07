@@ -42,8 +42,10 @@ build()
     msg "The local files are updated."
   else
     git clone "$_gitroot" "$_gitname"
+		cd "$_gitname"
   fi
 
+	pwd
 	git checkout "v$pkgver"
 
   msg "GIT checkout done or server timeout"
