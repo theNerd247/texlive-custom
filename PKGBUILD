@@ -6,7 +6,7 @@
 # Maintainer: Your Name <noah.harvey247@gmail.com>
 pkgname=texlive-custom
 pkgver=0.0.2
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc="custom latex package for labreports"
 arch=('any')
@@ -45,15 +45,15 @@ build()
 		cd "$_gitname"
   fi
 
-	pwd
-	git checkout "v$pkgver"
+	#NOTE: If you want a specific version to use then check it out here
 
   msg "GIT checkout done or server timeout"
 }
 
 package() {
-	INSTALL_DIR="$pkgdir/usr/share/texmf/tex/latex/custom"
+	INSTALL_DIR="$pkgdir/usr/share/texmf-dist/tex/latex/custom"
 	cd "$srcdir/$_gitname"
 	mkdir -p "$INSTALL_DIR"
 	cp -r pkgs/* "$INSTALL_DIR"
+	mktexlsr
 }
