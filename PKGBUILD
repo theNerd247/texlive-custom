@@ -5,7 +5,7 @@
 
 # Maintainer: Your Name <noah.harvey247@gmail.com>
 pkgname=texlive-custom
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 epoch=
 pkgdesc="custom latex package for labreports"
@@ -26,7 +26,7 @@ install=
 changelog=
 source=()
 noextract=()
-md5sums=('777c760bef67a06552023660aa6e867c')
+md5sums=()
 validpgpkeys=()
 
 _gitroot="$url.git"
@@ -43,6 +43,8 @@ build()
   else
     git clone "$_gitroot" "$_gitname"
   fi
+
+	git checkout $pkgver
 
   msg "GIT checkout done or server timeout"
 }
