@@ -5,7 +5,7 @@
 
 # Maintainer: Your Name <noah.harvey247@gmail.com>
 pkgname=texlive-custom
-pkgver=0.0.4
+pkgver=0.0.5
 pkgrel=1
 epoch=
 pkgdesc="custom latex package for labreports"
