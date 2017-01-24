@@ -5,8 +5,8 @@
 
 # Maintainer: Your Name <noah.harvey247@gmail.com>
 pkgname=texlive-custom
-pkgver=0.0.2
-pkgrel=2
+pkgver=0.0.3
+pkgrel=1
 epoch=
 pkgdesc="custom latex package for labreports"
 arch=('any')
@@ -22,7 +22,7 @@ conflicts=()
 replaces=()
 backup=()
 options=()
-install=
+install=texlive-custom.install
 changelog=
 source=()
 noextract=()
@@ -55,5 +55,4 @@ package() {
 	cd "$srcdir/$_gitname"
 	mkdir -p "$INSTALL_DIR"
 	cp -r pkgs/* "$INSTALL_DIR"
-	mktexlsr
 }
